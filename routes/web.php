@@ -19,4 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('ad', 'AdvertisementsController');
+Route::prefix('ad')->group(function () {
+
+    Route::get('/', ['uses' => 'AdvertisementsController@index']);
+    Route::get('/details/{id}', ['uses' => 'AdvertisementsController@show']);
+    Route::get('/create', ['uses' => 'AdvertisementsController@create']);
+
+});
+
+//Route::resource('ad', 'AdvertisementsController');

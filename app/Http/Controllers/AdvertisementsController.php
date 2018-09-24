@@ -48,7 +48,7 @@ class AdvertisementsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('ads.details', compact('id'));
     }
 
     /**
